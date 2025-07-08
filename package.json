@@ -1,0 +1,24 @@
+{
+  "name": "careercraft-ai",
+  "version": "1.0.0",
+  "description": "A fullstack monorepo for CareerCraft AI - helping students with career prep using GenAI",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd apps/frontend && npm run dev",
+    "dev:backend": "cd apps/backend-node && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd apps/frontend && npm run build",
+    "build:backend": "cd apps/backend-node && npm run build",
+    "install:all": "npm install && cd apps/frontend && npm install && cd ../backend-node && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["career", "ai", "students", "genai", "fullstack", "monorepo"],
+  "author": "CareerCraft AI Team",
+  "license": "MIT"
+}
